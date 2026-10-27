@@ -24,6 +24,11 @@
   </properties>
 
   <dependencies>
+    <!-- JSON document format of the filesystem store (version managed by the Spring Boot parent) -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
     <!-- JUnit 5, Mockito, AssertJ. Web/validation starters are added with the REST API step. -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
