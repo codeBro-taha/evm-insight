@@ -14,7 +14,16 @@ jobs:
           cache: maven
       - name: Backend tests and coverage
         working-directory: backend
-        run: mvn -B test
+        shell: bash
+        run: |
+          set +e
+          mvn -B test 2>&1 | tee build.log
+          code=${PIPESTATUS[0]}
+          if [ "$code" -ne 0 ]; then
+            # surface failures as annotations (readable without downloading logs)
+            grep -E "\\[ERROR\\]|FAIL|Tests run:.*(Failures: [1-9]|Errors: [1-9])" build.log | head -40 | sed 's/%/%25/g' | while IFS= read -r l; do echo "::error::${l:0:400}"; done
+          fi
+          exit $code
       - name: Keep test evidence
         if: always()
         uses: actions/upload-artifact@v4
