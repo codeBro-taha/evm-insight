@@ -9,7 +9,7 @@ storage, one authoritative EVM engine in the Spring Boot backend.
 |---|---|
 | EVM calculation engine + reference tests | done, 34 tests |
 | Versioned filesystem store: atomic saves, checksums, migrations, lock, backup/restore (27 tests, `docs/storage-design.md`) | done |
-| REST API: projects, WBS, baselines (versioned, immutable), audit log | in review (CI) |
+| REST API: projects, WBS, baselines (versioned, immutable), audit log | done (CI green) |
 | Reporting+cost entry, EVM endpoints, exports, frontend, evidence console, Docker | next |
 | Desktop shell (Tauri) / universal macOS | deferred (CR-001) |
 
