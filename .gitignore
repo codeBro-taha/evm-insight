@@ -1,0 +1,15 @@
+# build output
+target/
+dist/
+node_modules/
+src-tauri/target/
+# local data and secrets (NFR-04: never commit secrets or user data)
+.env
+.env.*
+*.log
+/data/
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.iml
