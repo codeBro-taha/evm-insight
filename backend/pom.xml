@@ -24,6 +24,10 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
     <!-- JSON document format of the filesystem store (version managed by the Spring Boot parent) -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -39,6 +43,10 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
